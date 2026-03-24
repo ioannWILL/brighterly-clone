@@ -80,7 +80,28 @@ body {
 .user-profile {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+}
+
+.parent-access {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #f9fafb;
+}
+
+.parent-access:hover {
+    background-color: #f3f4f6;
+}
+
+.ivan-icon {
+    color: var(--primary-blue);
+    font-size: 16px;
 }
 
 .avatar {
@@ -365,15 +386,83 @@ body {
     justify-content: space-between;
 }
 
-.nav-arrow {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #e5e7eb;
-    background: #fff;
-    color: var(--text-gray);
-    cursor: pointer;
-    display: flex;
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
     align-items: center;
     justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-gray);
+}
+
+.code-inputs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.code-box {
+    width: 50px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--border-radius-md);
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.code-box:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-blue-light);
+}
+
+.btn-blue {
+    background-color: var(--primary-blue);
+    color: #fff;
+    width: 100%;
+}
+
+.btn-blue:hover {
+    background-color: #5568cc;
 }
