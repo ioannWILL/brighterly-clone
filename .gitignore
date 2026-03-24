@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+.tempmediaStorage/
+*.resolved
+*.resolved.*
+*.metadata.json
+browser/
