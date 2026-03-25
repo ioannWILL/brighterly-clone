@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Brighterly Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body.login-page {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        .demo-notice {
+            background: #fff9ea;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body class="login-page">
+    <div class="login-card">
+        <img src="https://cs.brighterly.com/_nuxt/brighterly.CIV4ES6z.svg" alt="Brighterly" style="width: 180px; margin-bottom: 20px;">
+        <h2>Welcome to the Demo!</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">Start your gamified learning journey today.</p>
+
+        <div class="demo-notice">
+            <i class="fas fa-info-circle"></i>
+            <span><strong>Demo Mode:</strong> These credentials are one-time use only for this exploration session.</span>
+        </div>
+
+        <form onsubmit="handleDemoLogin(event)">
+            <div class="form-group">
+                <label>Parent Email</label>
+                <input type="email" placeholder="e.g. parent@example.com" required>
+            </div>
+            <div class="form-group">
+                <label>Parent Name</label>
+                <input type="text" placeholder="e.g. Ivan" required>
+            </div>
+            <div class="form-group">
+                <label>Kid Name</label>
+                <input type="text" placeholder="e.g. Stefaniia" required>
+            </div>
+            <div class="form-group">
+                <label>Kid Grade</label>
+                <select required>
+                    <option value="">Select Grade</option>
+                    <option value="Gk">Grade K (Pre-K)</option>
+                    <option value="G1">Grade 1</option>
+                    <option value="G2">Grade 2</option>
+                    <option value="G3" selected>Grade 3</option>
+                    <option value="G4">Grade 4</option>
+                    <option value="G5">Grade 5</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-yellow" style="width: 100%; padding: 14px; margin-top: 10px; font-size: 16px;">Start Exploring <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></button>
+        </form>
+    </div>
+
+    <script>
+        function handleDemoLogin(event) {
+            event.preventDefault();
+            // In a real app, we'd save these values. For the demo, we just redirect.
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
