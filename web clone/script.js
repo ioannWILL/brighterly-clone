@@ -81,16 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = {
         math: {
             title: 'Math program',
-            promoTitle: 'Your Galactic Mission: Complete Tutor Quests!',
-            promoDesc: 'Master new skills, earn 50 Star Coins, and unlock cool rewards for your avatar! Your tutor has left special challenges just for you.',
-            promoBtn: 'Start Mission',
+            promoTitle: 'Ms. Sarah Chen sent you new challenges!',
+            promoDesc: "Complete these quests to earn 50 Star Coins and unlock cool rewards. You're very close to reaching Level 5 in your adventure!",
+            promoBtn: 'Start Challenges',
             promoImg: 'assets/promo-illustration.png',
             promoBadge: '<i class="fas fa-rocket"></i> New Quest!'
         },
         ela: {
             title: 'ELA program',
-            promoTitle: 'Unlock the Treasure! Complete Tutor Tasks',
-            promoDesc: 'Collect golden keys by finishing your English challenges. Each task brings you closer to the Rare Trophy chest!',
+            promoTitle: 'Ms. Sarah Chen sent you new English tasks!',
+            promoDesc: "Collect golden keys by finishing your English challenges. You're very close to reaching Level 5 in your adventure!",
             promoBtn: 'Claim My Tasks',
             promoImg: 'assets/promo-ela.png',
             promoBadge: '<i class="fas fa-key"></i> Treasure Hunt!'
@@ -102,16 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Update Nav
         document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-        if (subject === 'math') navMath.classList.add('active');
-        if (subject === 'ela') navEla.classList.add('active');
+        if (subject === 'math' && navMath) navMath.classList.add('active');
+        if (subject === 'ela' && navEla) navEla.classList.add('active');
 
         // Update Content
-        programTitle.innerHTML = `${content[subject].title} <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>`;
-        promoTitle.textContent = content[subject].promoTitle;
-        promoDesc.textContent = content[subject].promoDesc;
-        promoBtn.textContent = content[subject].promoBtn;
-        promoImg.src = content[subject].promoImg;
-        promoBadge.innerHTML = content[subject].promoBadge;
+        if (programTitle) programTitle.innerHTML = `${content[subject].title} <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>`;
+        if (promoTitle) promoTitle.textContent = content[subject].promoTitle;
+        if (promoDesc) promoDesc.textContent = content[subject].promoDesc;
+        if (promoBtn) promoBtn.textContent = content[subject].promoBtn;
+        if (promoImg) promoImg.src = content[subject].promoImg;
+        if (promoBadge) promoBadge.innerHTML = content[subject].promoBadge;
     }
 
     if (navMath) {
