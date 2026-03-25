@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Portal - Brighterly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="parent-dashboard">
+    <header class="parent-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo">
+                <a href="index.html"><img src="https://cs.brighterly.com/_nuxt/brighterly.CIV4ES6z.svg" alt="Brighterly"></a>
+            </div>
+            <a href="index.html" class="parent-link"><i class="fas fa-arrow-left"></i> Back to Student View</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="container">
+            <!-- Student Profile Header -->
+            <div class="profile-card">
+                <div class="profile-info">
+                    <div class="profile-avatar">AJ</div>
+                    <div>
+                        <h1 style="margin: 0; font-size: 24px;">Alex Johnson</h1>
+                        <p style="margin: 5px 0 0; color: #64748b; font-size: 14px;">
+                            <i class="fas fa-book-open" style="margin-right: 5px;"></i> 3rd Grade &nbsp;•&nbsp; 
+                            <i class="fas fa-chalkboard-teacher" style="margin-right: 5px;"></i> Tutor: Ms. Sarah Chen &nbsp;•&nbsp;
+                            <i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> Week of Mar 18–24, 2026
+                        </p>
+                    </div>
+                </div>
+                <div class="filter-tabs" style="display: flex; background: #f1f5f9; padding: 4px; border-radius: 8px;">
+                    <button class="btn" style="background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 6px 15px; font-size: 14px;">This Week</button>
+                    <button class="btn" style="background: transparent; padding: 6px 15px; font-size: 14px; color: #64748b;">This Month</button>
+                    <button class="btn" style="background: transparent; padding: 6px 15px; font-size: 14px; color: #64748b;">All Time</button>
+                </div>
+            </div>
+
+            <!-- Subject Mastery Section -->
+            <h2 style="margin-bottom: 20px; font-size: 20px;"><i class="fas fa-bullseye" style="color: var(--primary-blue); margin-right: 10px;"></i> Subject Mastery</h2>
+            <div class="mastery-grid">
+                <!-- Mathematics Card -->
+                <div class="mastery-card">
+                    <div class="mastery-header">
+                        <i class="fas fa-calculator" style="color: var(--accent-green);"></i> Mathematics
+                    </div>
+                    <div class="circular-progress-box">
+                        <div class="progress-circle math">
+                            <div class="progress-circle-inner">72%</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #64748b; text-transform: uppercase; font-weight: 700;">Overall Progress</div>
+                            <div style="font-size: 24px; font-weight: 700;">72% Mastery</div>
+                            <div style="font-size: 14px; color: var(--accent-green); font-weight: 500;"><i class="fas fa-chart-line"></i> +8% improvement this month</div>
+                        </div>
+                    </div>
+                    <div class="sub-skills">
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Addition & Subtraction</span> <span>91%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 91%; background: var(--accent-green);"></div></div>
+                        </div>
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Multiplication</span> <span>68%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 68%; background: var(--accent-green);"></div></div>
+                        </div>
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Word Problems <span class="tag-pill tag-concept">Needs Practice</span></span> <span>54%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 54%; background: var(--primary-yellow);"></div></div>
+                        </div>
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Fractions <span class="tag-pill tag-motivation">Just Started</span></span> <span>38%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 38%; background: var(--primary-yellow);"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ELA Card -->
+                <div class="mastery-card">
+                    <div class="mastery-header">
+                        <i class="fas fa-book" style="color: var(--primary-blue);"></i> English Language Arts
+                    </div>
+                    <div class="circular-progress-box">
+                        <div class="progress-circle ela">
+                            <div class="progress-circle-inner">79%</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #64748b; text-transform: uppercase; font-weight: 700;">Overall Progress</div>
+                            <div style="font-size: 24px; font-weight: 700;">79% Mastery</div>
+                            <div style="font-size: 14px; color: var(--accent-green); font-weight: 500;"><i class="fas fa-chart-line"></i> +5% improvement this month</div>
+                        </div>
+                    </div>
+                    <div class="sub-skills">
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Reading Comprehension</span> <span>85%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%; background: var(--primary-blue);"></div></div>
+                        </div>
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Vocabulary</span> <span>78%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 78%; background: var(--primary-blue);"></div></div>
+                        </div>
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Spelling</span> <span>72%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 72%; background: var(--primary-blue);"></div></div>
+                        </div>
+                        <div class="sub-skill-item">
+                            <div class="skill-label"><span>Writing & Grammar <span class="tag-pill tag-achievement">Developing</span></span> <span>61%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 61%; background: var(--primary-yellow);"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity + Self-Paced -->
+            <h2 style="margin-bottom: 20px; font-size: 20px;"><i class="fas fa-history" style="color: var(--primary-blue); margin-right: 10px;"></i> Recent Activity Summary</h2>
+            <div class="mastery-grid">
+                <!-- Tutoring Sessions -->
+                <div class="mastery-card">
+                    <div style="font-size: 12px; color: #64748b; text-transform: uppercase; font-weight: 700; margin-bottom: 20px;">Tutoring Sessions (Last 2)</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 style="margin: 0;">Session 2 — Wed March 20</h4>
+                            <p style="font-size: 13px; color: #64748b; margin: 5px 0;"><i class="fas fa-clock"></i> 45 min &nbsp;•&nbsp; <i class="fas fa-bullseye"></i> Focus: Math + ELA</p>
+                            <div style="font-size: 13px; margin-top: 10px;">
+                                <strong>New concepts introduced:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>Introduction to fractions (halves, thirds, quarters)</li>
+                                    <li>Reading comprehension: main idea vs. supporting details</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: #cbd5e1;"></div>
+                            <h4 style="margin: 0; color: #64748b;">Session 1 — Mon March 18</h4>
+                            <p style="font-size: 13px; color: #94a3b8; margin: 5px 0;"><i class="fas fa-clock"></i> 45 min &nbsp;•&nbsp; <i class="fas fa-bullseye"></i> Focus: Math + Reading</p>
+                            <div style="font-size: 13px; margin-top: 10px; color: #64748b;">
+                                <strong>New concepts introduced:</strong>
+                                <ul style="margin: 5px 0; padding-left: 20px;">
+                                    <li>Introduced multiplication as repeated addition</li>
+                                    <li>Practiced 2-digit by 1-digit multiplication</li>
+                                    <li>Reviewed vowel digraphs (ea, ai, oa)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self-Paced Activities -->
+                <div class="mastery-card">
+                    <div style="font-size: 12px; color: #64748b; text-transform: uppercase; font-weight: 700; margin-bottom: 20px;">Self-Paced Activities (This Week)</div>
+                    <div class="activity-list">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 10px;">
+                            <div style="display: flex; gap: 12px;">
+                                <div style="color: var(--accent-green);"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <div style="font-weight: 600;">Word Families Quiz</div>
+                                    <div style="font-size: 12px; color: #64748b;">ELA • Fri Mar 22</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="tag-pill tag-achievement" style="font-size: 10px;">Completed</div>
+                                <div style="color: var(--primary-yellow); font-weight: 700; font-size: 14px;"><i class="fas fa-star"></i> 40 XP</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 10px;">
+                            <div style="display: flex; gap: 12px;">
+                                <div style="color: var(--accent-green);"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <div style="font-weight: 600;">Fraction Fun Part 1</div>
+                                    <div style="font-size: 12px; color: #64748b;">Math • Thu Mar 21</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="tag-pill tag-achievement" style="font-size: 10px;">Completed</div>
+                                <div style="color: var(--primary-yellow); font-weight: 700; font-size: 14px;"><i class="fas fa-star"></i> 50 XP</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 10px;">
+                            <div style="display: flex; gap: 12px;">
+                                <div style="color: var(--accent-green);"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <div style="font-weight: 600;">Multiplication Practice 1</div>
+                                    <div style="font-size: 12px; color: #64748b;">Math • Wed Mar 20</div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="tag-pill tag-achievement" style="font-size: 10px;">Completed</div>
+                                <div style="color: var(--primary-yellow); font-weight: 700; font-size: 14px;"><i class="fas fa-star"></i> 60 XP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 10px; display: flex; justify-content: space-around; font-size: 12px; font-weight: 600; color: #64748b;">
+                        <span>5 activities completed</span>
+                        <span>275 XP earned</span>
+                        <span style="color: #c2410c;"><i class="fas fa-bolt"></i> 7-day streak active</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <div class="mastery-grid">
+                <div class="insight-card insight-excelling">
+                    <h4 style="margin-top: 0; color: #166534;"><i class="fas fa-check"></i> Where Alex is excelling</h4>
+                    <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 0;">
+                        <li>Strong number sense — consistently scores 90%+ on addition/subtraction</li>
+                        <li>Enthusiastic reader — completes reading activities faster than expected</li>
+                        <li>Great learning consistency — 7-day streak shows strong daily habit</li>
+                        <li>Responds well to visual explanations (noted by tutor)</li>
+                    </ul>
+                </div>
+                <div class="insight-card insight-focus">
+                    <h4 style="margin-top: 0; color: #92400e;"><i class="fas fa-bolt"></i> Where to focus next</h4>
+                    <ul style="padding-left: 20px; font-size: 14px; margin-bottom: 0;">
+                        <li>Fractions concept is new and needs reinforcement — only 38% mastery so far</li>
+                        <li>Word problems require more practice — tends to skip re-reading</li>
+                        <li>Writing and grammar is the weakest ELA sub-skill (61%)</li>
+                        <li>Multiplication facts fluency: speed is improving but needs more repetition</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Conversation Starters -->
+            <div style="background: #eff6ff; border-radius: var(--border-radius-lg); padding: 30px; margin-bottom: 50px;">
+                <h3 style="margin-top: 0;"><i class="fas fa-comment-dots" style="color: var(--primary-blue);"></i> Conversation Starters — Talk Learning with Alex This Week</h3>
+                <p style="font-size: 14px; color: #64748b; margin-bottom: 25px;">Research shows that parent-child conversations about learning boost retention by up to 40%. Here are personalized suggestions based on Alex's recent work:</p>
+                <div class="convo-grid">
+                    <div class="convo-card">
+                        <h4 style="margin-top: 0;">Ask About Fractions 🍕</h4>
+                        <p style="font-size: 13px; color: #64748b; margin-bottom: 15px;">Ms. Chen introduced fractions this week. Try asking: "If we cut this pizza into 4 equal pieces, what fraction would one piece be?"</p>
+                        <span class="tag-pill" style="background: #f1f5f9; color: #64748b;">Math</span>
+                        <span class="tag-pill tag-concept">New Concept</span>
+                    </div>
+                    <div class="convo-card">
+                        <h4 style="margin-top: 0;">Celebrate the Streak! 🏆</h4>
+                        <p style="font-size: 13px; color: #64748b; margin-bottom: 15px;">Alex has kept a 7-day learning streak — that's a real achievement. Ask: "What was your favorite activity this week?" Acknowledging effort encourages continued motivation.</p>
+                        <span class="tag-pill tag-motivation">Motivation</span>
+                        <span class="tag-pill tag-achievement">Achievement</span>
+                    </div>
+                    <div class="convo-card">
+                        <h4 style="margin-top: 0;">Reading Together 📖</h4>
+                        <p style="font-size: 13px; color: #64748b; margin-bottom: 15px;">Alex is developing main idea skills. Read any short article together and ask: "What's the most important thing the author wanted us to know?"</p>
+                        <span class="tag-pill" style="background: #f1f5f9; color: #64748b;">ELA</span>
+                        <span class="tag-pill tag-reading">Comprehension</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

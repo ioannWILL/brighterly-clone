@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const code = Array.from(codeInputs).map(input => input.value).join('');
             if (code.length === 4) {
                 // Accept any 4 digit code
-                window.location.href = 'parents.html';
+                window.location.href = 'parent.html';
             } else {
                 alert('Please enter a 4-digit code.');
             }
