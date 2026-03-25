@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="mission-page subject-ela">
@@ -35,13 +34,137 @@
     </header>
 
     <main class="content-wrapper">
-        <div class="container">
-            <div class="page-header">
-                <h1>ELA Mission <a href="index.html" class="read-more"><i class="fas fa-arrow-left"></i> Back to Dashboard</a></h1>
+        <div class="container mission-container">
+            <!-- 1. Header with greeting -->
+            <div class="mission-header">
+                <a href="index.html" class="read-more" style="margin-bottom: 20px; display: inline-block;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+                <h1>Hey Stefaniia, let's crush some ELA quests today! 📚</h1>
+                <p>Reading is your superpower! One more task to Level 5.</p>
             </div>
-            <div class="card" style="padding: 40px; text-align: center; margin-top: 20px;">
-                <h2 style="margin-bottom: 20px;">Welcome to your Tropical Quest!</h2>
-                <p style="color: var(--text-gray);">Explore English challenges and find the hidden treasure.</p>
+
+            <div class="dashboard-grid">
+                <div class="main-column" style="display: flex; flex-direction: column; gap: 30px;">
+                    <!-- 2. Weekly Streak -->
+                    <div class="streak-card">
+                        <div class="streak-info">
+                            <div class="streak-icon" style="color: #4CAF50;"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <h3 style="margin-bottom: 4px;">4 Day Streak!</h3>
+                                <p style="color: var(--text-gray); font-size: 14px;">Master 3 more days to win the Tropical Crown.</p>
+                            </div>
+                        </div>
+                        <div class="streak-days">
+                            <div class="day-circle active" style="background-color: #4CAF50; border-color: #4CAF50;">M</div>
+                            <div class="day-circle active" style="background-color: #4CAF50; border-color: #4CAF50;">T</div>
+                            <div class="day-circle active" style="background-color: #4CAF50; border-color: #4CAF50;">W</div>
+                            <div class="day-circle today" style="color: #4CAF50; border-color: #4CAF50;">T</div>
+                            <div class="day-circle">F</div>
+                            <div class="day-circle">S</div>
+                            <div class="day-circle">S</div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Today's Task & Level Progress -->
+                    <div class="progress-card">
+                        <div class="progress-header">
+                            <div>
+                                <h3 style="margin-bottom: 4px;">Today's Task: Super Sentences</h3>
+                                <p style="color: var(--text-gray); font-size: 14px;">Next Level: Level 5 - Word Smith</p>
+                            </div>
+                            <div class="reward-badge" style="background: #f0fdf4; color: #166534;">
+                                <i class="fas fa-coins"></i> +50 XP
+                            </div>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 14px; color: var(--text-gray);">60% complete to Level 5</span>
+                            <button class="btn btn-yellow" style="padding: 12px 30px; background-color: #FF9800; box-shadow: 0 4px 0 #E65100;">Start Tasks</button>
+                        </div>
+                    </div>
+
+                    <!-- 5. Overall Progress (Course Goals) -->
+                    <div class="card" style="padding: 24px;">
+                        <h3 style="margin-bottom: 20px;">Your ELA Journey</h3>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0369a1;"><i class="fas fa-book-open"></i></div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span style="font-weight: 500;">Phonics & Sounds</span>
+                                        <span style="color: #0369a1; font-weight: 600;">Completed</span>
+                                    </div>
+                                    <div class="progress-bar-container" style="height: 6px; margin-bottom: 0;"><div class="progress-fill" style="width: 100%; background: #0369a1;"></div></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #166534;"><i class="fas fa-spell-check"></i></div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span style="font-weight: 500;">Intermediate Grammar</span>
+                                        <span style="color: var(--text-gray); font-size: 14px;">In Progress</span>
+                                    </div>
+                                    <div class="progress-bar-container" style="height: 6px; margin-bottom: 0;"><div class="progress-fill" style="width: 45%; background: #4CAF50;"></div></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #f3f4f6; display: flex; align-items: center; justify-content: center; color: #9ca3af;"><i class="fas fa-pen-nib"></i></div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                        <span style="font-weight: 500;">Creative Writing</span>
+                                        <span style="color: var(--text-gray); font-size: 14px;">Locked</span>
+                                    </div>
+                                    <div class="progress-bar-container" style="height: 6px; margin-bottom: 0;"><div class="progress-fill" style="width: 0%;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-column" style="display: flex; flex-direction: column; gap: 30px;">
+                    <!-- 3. Stats Tiles -->
+                    <div class="stats-grid" style="grid-template-columns: 1fr; gap: 15px;">
+                        <div class="stat-tile">
+                            <i class="fas fa-feather xp-icon" style="color: #4CAF50;"></i>
+                            <span class="stat-value">1,250</span>
+                            <span class="stat-label">Total XP</span>
+                        </div>
+                        <div class="stat-tile">
+                            <i class="fas fa-scroll level-icon" style="color: #8b5cf6;"></i>
+                            <span class="stat-value">Level 4</span>
+                            <span class="stat-label">Word Smith</span>
+                        </div>
+                        <div class="stat-tile">
+                            <i class="fas fa-check-circle tasks-icon" style="color: #3b82f6;"></i>
+                            <span class="stat-value">32</span>
+                            <span class="stat-label">Tasks Done</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Badges section -->
+                    <div class="badges-section" style="border: 2px solid #e8f5e9;">
+                        <h3>Your Tropical Badges</h3>
+                        <div class="badges-grid">
+                            <div class="badge-item active">
+                                <div class="badge-icon" style="background: #fdf2f8; color: #9d174d;"><i class="fas fa-star-and-crescent"></i></div>
+                                <span class="badge-name">Newbie</span>
+                            </div>
+                            <div class="badge-item active">
+                                <div class="badge-icon" style="background: #fffbeb; color: #92400e;"><i class="fas fa-gem"></i></div>
+                                <span class="badge-name">Shiny</span>
+                            </div>
+                            <div class="badge-item inactive">
+                                <div class="badge-icon"><i class="fas fa-book"></i></div>
+                                <span class="badge-name">Reader</span>
+                            </div>
+                            <div class="badge-item inactive">
+                                <div class="badge-icon"><i class="fas fa-feather-alt"></i></div>
+                                <span class="badge-name">Writer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
