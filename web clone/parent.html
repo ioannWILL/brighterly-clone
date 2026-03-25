@@ -16,7 +16,13 @@
             <div class="logo">
                 <a href="index.html"><img src="https://cs.brighterly.com/_nuxt/brighterly.CIV4ES6z.svg" alt="Brighterly"></a>
             </div>
-            <a href="index.html" class="parent-link"><i class="fas fa-arrow-left"></i> Back to Student View</a>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="tutor-access" onclick="window.location.href='tutor.html'">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Tutor View</span>
+                </div>
+                <a href="index.html" class="parent-link"><i class="fas fa-arrow-left"></i> Back to Student View</a>
+            </div>
         </div>
     </header>
 
@@ -322,6 +328,9 @@
             targetContent.classList.add('active');
         }
     </script>
+    <button class="next-day-float" onclick="alert('Mock: Advancing to next day... Daily tasks refreshed!')">
+        <i class="fas fa-sun"></i> Next Day
+    </button>
     <script src="script.js"></script>
 </body>
 </html>

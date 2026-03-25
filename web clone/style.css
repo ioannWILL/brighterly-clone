@@ -1112,3 +1112,118 @@ body.subject-ela .progress-fill {
 .tag-achievement { background: #f0fdf4; color: var(--accent-green); }
 .tag-concept { background: #fff7ed; color: #c2410c; }
 .tag-reading { background: #f5f3ff; color: #7c3aed; }
+
+/* Floating Next Day Button */
+.next-day-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--text-dark);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.next-day-float:hover {
+    transform: scale(1.05) translateY(-5px);
+    background: #000;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.next-day-float i {
+    font-size: 18px;
+    color: var(--primary-yellow);
+}
+
+/* Tutor View Button in Header */
+.tutor-access {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-right: 15px;
+}
+
+.tutor-access:hover {
+    background: #e2e8f0;
+    color: var(--text-dark);
+}
+
+.tutor-access i {
+    color: #8b5cf6;
+}
+
+/* Tutor Dashboard Styles */
+.tutor-dashboard {
+    background: #f8fafc;
+}
+
+.tutor-header {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 20px 0;
+}
+
+.tutor-tab-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bad-performance-card {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 20px;
+}
+
+.bad-performance-card h4 {
+    color: #991b1b;
+    margin-top: 0;
+}
+
+.reexplain-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #fee2e2;
+}
+
+.review-task-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-task-card.confirmed {
+    border-left: 4px solid var(--accent-green);
+}
