@@ -28,39 +28,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeInputs = document.querySelectorAll('.code-box');
     const verifyBtn = document.getElementById('verify-btn');
 
-    if (parentBtn) {
+    if (parentBtn && modal) {
         parentBtn.addEventListener('click', () => {
             modal.classList.add('active');
-            codeInputs[0].focus();
+            if (codeInputs.length > 0) {
+                codeInputs[0].focus();
+            }
         });
     }
 
-    if (closeBtn) {
+    if (closeBtn && modal) {
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('active');
         });
     }
 
     // Auto-focus move logic for code boxes
-    codeInputs.forEach((input, index) => {
-        input.addEventListener('input', (e) => {
-            if (e.target.value.length === 1 && index < codeInputs.length - 1) {
-                codeInputs[index + 1].focus();
-            }
-        });
+    if (codeInputs.length > 0) {
+        codeInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1 && index < codeInputs.length - 1) {
+                    codeInputs[index + 1].focus();
+                }
+            });
 
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                codeInputs[index - 1].focus();
-            }
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    codeInputs[index - 1].focus();
+                }
+            });
         });
-    });
+    }
 
-    if (verifyBtn) {
+    if (verifyBtn && codeInputs.length > 0) {
         verifyBtn.addEventListener('click', () => {
             const code = Array.from(codeInputs).map(input => input.value).join('');
             if (code.length === 4) {
-                // Accept any 4 digit code
+                // Accept any 4 digit code for demo purposes
                 window.location.href = 'parent.html';
             } else {
                 alert('Please enter a 4-digit code.');
