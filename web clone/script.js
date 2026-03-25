@@ -127,4 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSubject('ela');
         });
     }
+
+    if (promoBtn) {
+        promoBtn.addEventListener('click', () => {
+            const subject = document.body.classList.contains('subject-ela') ? 'ela' : 'math';
+            window.location.href = `${subject}-mission.html`;
+        });
+    }
 });
