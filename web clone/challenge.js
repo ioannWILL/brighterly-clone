@@ -22,6 +22,7 @@ const questionBank = {
 let currentQuestionIndex = 0;
 let answered = false;
 let subject = 'math';
+let score = 0;
 
 // Get subject from URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -33,6 +34,11 @@ const optionsGrid = document.getElementById('options-grid');
 const feedback = document.getElementById('feedback');
 const nextBtn = document.getElementById('next-question-btn');
 const finishBtn = document.getElementById('finish-btn');
+const challengeContainer = document.getElementById('challenge-container');
+const resultCard = document.getElementById('result-card');
+const scoreDisplay = document.getElementById('score-display');
+const resultMessage = document.getElementById('result-message');
+const resultIcon = document.getElementById('result-icon');
 
 function renderQuestion() {
     const questions = questionBank[subject];
@@ -67,6 +73,7 @@ function handleAnswer(selectedOption, clickedBtn) {
     buttons.forEach(btn => btn.style.cursor = 'default');
 
     if (selectedOption === data.correct) {
+        score++;
         clickedBtn.classList.add('correct');
         feedback.className = 'feedback-container correct';
         feedback.innerHTML = `<i class="fas fa-check-circle" style="margin-right: 8px;"></i> Excellent job! You found the right answer!`;
@@ -92,9 +99,24 @@ nextBtn.addEventListener('click', () => {
     renderQuestion();
 });
 
+function showResult() {
+    challengeContainer.style.display = 'none';
+    resultCard.style.display = 'block';
+    scoreDisplay.textContent = `${score}/7 Correct`;
+    
+    if (score >= 5) {
+        resultIcon.innerHTML = '<i class="fas fa-trophy" style="color: #facc15;"></i>';
+        resultMessage.className = 'congrats-text';
+        resultMessage.textContent = "Amazing! You're a true champion! You mastered these challenges with ease.";
+    } else {
+        resultIcon.innerHTML = '<i class="fas fa-rocket" style="color: var(--primary-blue);"></i>';
+        resultMessage.className = 'encourage-text';
+        resultMessage.textContent = "Great effort! You're getting better every time. Let's try again to reach Level 5!";
+    }
+}
+
 finishBtn.addEventListener('click', () => {
-    // Return to missions with a success state (could add a toast or badge here)
-    window.location.href = 'mission.html?completed=1';
+    showResult();
 });
 
 // Initial render

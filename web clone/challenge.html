@@ -39,7 +39,19 @@
 
                 <div class="challenge-actions">
                     <button id="next-question-btn" class="btn btn-blue">Next <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
-                    <button id="finish-btn" class="btn btn-yellow" style="display: none;">Collect Rewards!</button>
+                    <button id="finish-btn" class="btn btn-yellow" style="display: none;">See Results</button>
+                </div>
+            </div>
+
+            <!-- Result Card -->
+            <div id="result-card" class="challenge-card result-card">
+                <div id="result-icon" class="result-icon"></div>
+                <h2>Your Score</h2>
+                <div id="score-display" class="score-display">0/7</div>
+                <p id="result-message" class="congrats-text"></p>
+                <div class="challenge-actions" style="justify-content: center; gap: 15px;">
+                    <button onclick="location.reload()" class="btn btn-outline">Try Again</button>
+                    <a href="mission.html" class="btn btn-yellow">Back to Missions</a>
                 </div>
             </div>
         </div>
