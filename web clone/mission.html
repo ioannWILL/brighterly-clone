@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Mission - Brighterly</title>
+    <title>Your Missions - Brighterly</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +17,8 @@
                 <a href="index.html"><img src="https://cs.brighterly.com/_nuxt/brighterly.CIV4ES6z.svg" alt="Brighterly"></a>
             </div>
             <nav class="nav-links">
-                <a href="index.html" class="nav-item active" id="nav-math"><span class="icon math-icon"></span> Math</a>
-                <a href="index.html" class="nav-item" id="nav-ela"><span class="icon ela-icon"></span> ELA</a>
+                <a href="index.html" class="nav-item active"><span class="icon math-icon"></span> Math</a>
+                <a href="index.html" class="nav-item"><span class="icon ela-icon"></span> ELA</a>
                 <a href="#" class="nav-item"><span class="icon price-icon"></span> Prices</a>
                 <a href="#" class="nav-item">More <i class="fas fa-chevron-down"></i></a>
             </nav>
@@ -35,16 +35,16 @@
 
     <main class="content-wrapper">
         <div class="container mission-container">
-            <!-- 1. Header with greeting -->
+            <!-- Header with greeting -->
             <div class="mission-header">
                 <a href="index.html" class="read-more" style="margin-bottom: 20px; display: inline-block;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
-                <h1>Hey Stefaniia, let's crush some math quests today! 🚀</h1>
-                <p>You're doing amazing! Keep going to reach Level 5.</p>
+                <h1>Hey Stefaniia, let's crush your tasks today! 🚀</h1>
+                <p>You're only a few steps away from Level 5.</p>
             </div>
 
             <div class="dashboard-grid">
                 <div class="main-column" style="display: flex; flex-direction: column; gap: 30px;">
-                    <!-- 2. Weekly Streak -->
+                    <!-- Weekly Streak -->
                     <div class="streak-card">
                         <div class="streak-info">
                             <div class="streak-icon"><i class="fas fa-fire"></i></div>
@@ -64,53 +64,63 @@
                         </div>
                     </div>
 
-                    <!-- 4. Today's Task & Level Progress -->
-                    <div class="progress-card">
-                        <div class="progress-header">
-                            <div>
-                                <h3 style="margin-bottom: 4px;">Today's Task: Multiplication Master</h3>
-                                <p style="color: var(--text-gray); font-size: 14px;">Next Level: Level 5</p>
-                            </div>
-                            <div class="reward-badge">
-                                <i class="fas fa-star"></i> +50 XP
-                            </div>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 60%;"></div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 14px; color: var(--text-gray);">60% complete to Level 5</span>
-                            <button class="btn btn-yellow" style="padding: 12px 30px;">Start Tasks</button>
-                        </div>
-                    </div>
-
-                    <!-- 5. Overall Progress (Game Progress) -->
-                    <div class="card" style="padding: 24px;">
-                        <h3 style="margin-bottom: 20px;">Your Game Progress</h3>
-                        <div style="display: flex; flex-direction: column; gap: 20px;">
-                            <div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span style="font-weight: 500; font-size: 18px;"><i class="fas fa-map-marked-alt" style="color: var(--primary-blue);"></i> Path to Treasure</span>
-                                    <span style="color: var(--primary-blue); font-weight: 700;">47%</span>
-                                </div>
-                                <div class="progress-bar-container" style="height: 16px; margin-bottom: 10px;">
-                                    <div class="progress-fill" style="width: 47%;"></div>
+                    <!-- Task List (Combined Math & ELA) -->
+                    <div class="task-list-card">
+                        <h3 style="margin-bottom: 20px;">Today's Quest List</h3>
+                        <div class="task-item">
+                            <div class="task-main">
+                                <div class="task-check"><i class="fas fa-check"></i></div>
+                                <div class="task-info">
+                                    <h4><span class="task-tag tag-math">Math</span> Multiplication Master</h4>
+                                    <p>Practice your tables from 1 to 5</p>
                                 </div>
                             </div>
-                            
-                            <div style="background: var(--bg-light); padding: 15px; border-radius: var(--border-radius-md); display: flex; justify-content: space-between; align-items: center;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <i class="fas fa-chart-line" style="color: #4CAF50;"></i>
-                                    <span style="font-size: 14px; font-weight: 500;">Last Week's Hustle</span>
+                            <div style="text-align: right;">
+                                <div class="task-xp">+50 XP</div>
+                                <button class="btn btn-yellow" style="padding: 6px 15px; font-size: 12px; margin-top: 5px;">Start</button>
+                            </div>
+                        </div>
+                        <div class="task-item completed">
+                            <div class="task-main">
+                                <div class="task-check"><i class="fas fa-check"></i></div>
+                                <div class="task-info">
+                                    <h4><span class="task-tag tag-math">Math</span> Counting Stars</h4>
+                                    <p>Count from 1 to 100 in reverse</p>
                                 </div>
-                                <span style="background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 700;">+5% Completed</span>
+                            </div>
+                            <div class="task-xp">+25 XP</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-main">
+                                <div class="task-check"><i class="fas fa-check"></i></div>
+                                <div class="task-info">
+                                    <h4><span class="task-tag tag-ela">ELA</span> Super Sentences</h4>
+                                    <p>Identify verbs in 5 different sentences</p>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="task-xp">+50 XP</div>
+                                <button class="btn btn-yellow" style="padding: 6px 15px; font-size: 12px; margin-top: 5px;">Start</button>
+                            </div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-main">
+                                <div class="task-check"><i class="fas fa-check"></i></div>
+                                <div class="task-info">
+                                    <h4><span class="task-tag tag-ela">ELA</span> Spelling Bee</h4>
+                                    <p>Spell 10 common household objects</p>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="task-xp">+30 XP</div>
+                                <button class="btn btn-yellow" style="padding: 6px 15px; font-size: 12px; margin-top: 5px;">Start</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="sidebar-column" style="display: flex; flex-direction: column; gap: 30px;">
-                    <!-- 3. Stats Tiles -->
+                    <!-- Stats Tiles -->
                     <div class="stats-grid" style="grid-template-columns: 1fr; gap: 15px;">
                         <div class="stat-tile">
                             <i class="fas fa-star xp-icon"></i>
@@ -129,9 +139,9 @@
                         </div>
                     </div>
 
-                    <!-- 6. Badges section -->
+                    <!-- Badges section -->
                     <div class="badges-section">
-                        <h3>Your Badges</h3>
+                        <h3>Your Achievements</h3>
                         <div class="badges-grid">
                             <div class="badge-item active">
                                 <div class="badge-icon"><i class="fas fa-bolt"></i></div>
@@ -144,10 +154,6 @@
                             <div class="badge-item inactive">
                                 <div class="badge-icon"><i class="fas fa-trophy"></i></div>
                                 <span class="badge-name">Champion</span>
-                            </div>
-                            <div class="badge-item inactive">
-                                <div class="badge-icon"><i class="fas fa-crown"></i></div>
-                                <span class="badge-name">Master</span>
                             </div>
                         </div>
                     </div>

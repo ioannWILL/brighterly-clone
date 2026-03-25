@@ -130,8 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (promoBtn) {
         promoBtn.addEventListener('click', () => {
-            const subject = document.body.classList.contains('subject-ela') ? 'ela' : 'math';
-            window.location.href = `${subject}-mission.html`;
+            window.location.href = 'mission.html';
         });
     }
 });
