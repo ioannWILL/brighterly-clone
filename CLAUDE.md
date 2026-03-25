@@ -86,21 +86,21 @@
 
 ### Key Documents
 
+**Implementation:**
+* `CTO-PROJECT.md` — **Technical specification** for building the self-learning platform (schema, APIs, architecture)
+
+**Strategy & Research:**
 * `brighterly_test_case.md` — Original project brief and requirements
-
-* `GTM-SELF-LEARNING-PLATFORM.md` — **Go-to-market document** for self-learning platform launch
-
+* `GTM-SELF-LEARNING-PLATFORM.md` — Go-to-market document for self-learning platform launch
 * `NOTIFICATION-STRATEGY.md` — Notification channel strategy and roadmap
-
 * `gtm-working-assumptions.md` — Working assumptions (to validate with internal data)
-
 * `competitor-analysis-kids-learning-platforms.md` — 12+ competitor analysis
-
 * `online_learning_kids_usa_research.md` — Market research (TAM, devices, best practices)
-
 * `gamification-mechanics-analysis.md` — Gamification mechanics from leading platforms
-
 * `coppa_notifications_nfr.md` — COPPA compliance requirements for notifications
+
+**Prototype Reference:**
+* `/web clone/` — Static HTML/CSS/JS prototype (login, kid view, parent dashboard, tutor view)
 
 ### Success Metrics to Consider
 
