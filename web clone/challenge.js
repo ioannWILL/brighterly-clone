@@ -38,6 +38,8 @@ const finalResultSection = document.getElementById('final-result-section');
 const scoreDisplay = document.getElementById('score-display');
 const resultMessage = document.getElementById('result-message');
 const resultIcon = document.getElementById('result-icon');
+const retryBtn = document.getElementById('retry-btn');
+const collectBtn = document.getElementById('collect-btn');
 
 function renderQuestion() {
     const questions = questionBank[subject];
@@ -50,6 +52,8 @@ function renderQuestion() {
     feedback.innerHTML = '';
     nextBtn.style.display = 'none';
     finalResultSection.style.display = 'none';
+    retryBtn.style.display = 'none';
+    collectBtn.style.display = 'none';
     answered = false;
 
     data.options.forEach(option => {
@@ -109,11 +113,13 @@ function showFinalResult() {
     if (score >= 5) {
         resultIcon.innerHTML = '<i class="fas fa-trophy" style="color: #facc15;"></i>';
         resultMessage.className = 'congrats-text';
-        resultMessage.innerHTML = "<strong>Amazing! You're a true champion!</strong><br>You mastered these challenges with ease. Keep up the great work!";
+        resultMessage.innerHTML = "<strong>Amazing! You're a true champion!</strong><br>You mastered these challenges and earned your reward.";
+        collectBtn.style.display = 'inline-block';
     } else {
         resultIcon.innerHTML = '<i class="fas fa-rocket" style="color: var(--primary-blue);"></i>';
         resultMessage.className = 'encourage-text';
-        resultMessage.innerHTML = "<strong>Great effort!</strong><br>You're getting better every time. Let's try again to reach Level 5!";
+        resultMessage.innerHTML = "<strong>Great effort!</strong><br>You're getting better every time! Let's try again to reach Level 5! Remember, the goal is to correctly answer at least 5 questions.";
+        retryBtn.style.display = 'inline-block';
     }
 }
 
