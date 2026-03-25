@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELA Mission - Brighterly</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="mission-page subject-ela">
-    <header class="header">
-        <div class="container header-content">
+    <header class="navbar">
+        <div class="container">
             <div class="logo">
                 <a href="index.html"><img src="https://cs.brighterly.com/_nuxt/brighterly.CIV4ES6z.svg" alt="Brighterly"></a>
             </div>
             <nav class="nav-links">
-                <a href="index.html" class="nav-item"><span class="icon math-icon"></span> Math</a>
-                <a href="index.html" class="nav-item active"><span class="icon ela-icon"></span> ELA</a>
+                <a href="index.html" class="nav-item" id="nav-math"><span class="icon math-icon"></span> Math</a>
+                <a href="index.html" class="nav-item active" id="nav-ela"><span class="icon ela-icon"></span> ELA</a>
                 <a href="#" class="nav-item"><span class="icon price-icon"></span> Prices</a>
                 <a href="#" class="nav-item">More <i class="fas fa-chevron-down"></i></a>
             </nav>
-            <div class="header-right">
-                <div class="user-info">
-                    <span class="kid-name">Stefaniia</span>
-                    <button id="parent-access-btn" class="parent-btn">
-                        <i class="fas fa-user-shield"></i>
-                        <span>Ivan</span>
-                    </button>
-                    <div class="avatar">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Stefaniia" alt="Avatar">
-                    </div>
+            <div class="user-profile">
+                <div class="parent-access" id="parent-access-btn">
+                    <span class="icon ivan-icon"><i class="fas fa-user-shield"></i></span>
+                    <span class="username">Ivan</span>
                 </div>
+                <div class="avatar">St</div>
+                <span class="username">Stefaniia</span>
             </div>
         </div>
     </header>
@@ -40,11 +39,13 @@
             <div class="page-header">
                 <h1>ELA Mission <a href="index.html" class="read-more"><i class="fas fa-arrow-left"></i> Back to Dashboard</a></h1>
             </div>
-            <div class="card" style="padding: 40px; text-align: center;">
-                <h2>Welcome to your Tropical Quest!</h2>
-                <p>Explore English challenges and find the hidden treasure.</p>
+            <div class="card" style="padding: 40px; text-align: center; margin-top: 20px;">
+                <h2 style="margin-bottom: 20px;">Welcome to your Tropical Quest!</h2>
+                <p style="color: var(--text-gray);">Explore English challenges and find the hidden treasure.</p>
             </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
