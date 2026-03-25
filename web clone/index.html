@@ -18,8 +18,8 @@
                 <img src="https://cs.brighterly.com/_nuxt/brighterly.CIV4ES6z.svg" alt="Brighterly">
             </div>
             <nav class="nav-links">
-                <a href="#" class="nav-item active"><span class="icon math-icon"></span> Math</a>
-                <a href="#" class="nav-item"><span class="icon ela-icon"></span> ELA</a>
+                <a href="#" class="nav-item active" id="nav-math"><span class="icon math-icon"></span> Math</a>
+                <a href="#" class="nav-item" id="nav-ela"><span class="icon ela-icon"></span> ELA</a>
                 <a href="#" class="nav-item"><span class="icon price-icon"></span> Prices</a>
                 <a href="#" class="nav-item">More <i class="fas fa-chevron-down"></i></a>
             </nav>
@@ -37,7 +37,7 @@
     <main class="content-wrapper">
         <div class="container">
             <div class="page-header">
-                <h1>Math program <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></h1>
+                <h1 id="program-title">Math program <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a></h1>
             </div>
 
             <div class="tabs">
@@ -51,13 +51,13 @@
                     <!-- Promo Card -->
                     <div class="card promo-card">
                         <div class="promo-text">
-                            <h3>Your Galactic Mission: Complete Tutor Quests!</h3>
-                            <p>Master new skills, earn 50 Star Coins, and unlock cool rewards for your avatar! Your tutor has left special challenges just for you.</p>
-                            <button class="btn btn-yellow">Start Mission</button>
+                            <h3 id="promo-title">Your Galactic Mission: Complete Tutor Quests!</h3>
+                            <p id="promo-desc">Master new skills, earn 50 Star Coins, and unlock cool rewards for your avatar! Your tutor has left special challenges just for you.</p>
+                            <button id="promo-btn" class="btn btn-yellow">Start Mission</button>
                         </div>
-                        <div class="promo-illustration">
-                            <span class="badge"><i class="fas fa-rocket"></i> New Quest!</span>
-                            <img src="assets/promo-illustration.png" alt="Space Mission Quest">
+                        <div class="promo-illustration" id="promo-img-container">
+                            <span class="badge" id="promo-badge"><i class="fas fa-rocket"></i> New Quest!</span>
+                            <img id="promo-img" src="assets/promo-illustration.png" alt="Space Mission Quest">
                         </div>
                     </div>
 

@@ -466,3 +466,35 @@ body {
 .btn-blue:hover {
     background-color: #5568cc;
 }
+
+/* ELA Subject Theme */
+body.subject-ela .nav-item.active {
+    color: #4CAF50;
+    border-bottom: 3px solid #4CAF50;
+}
+
+body.subject-ela .nav-item.active .icon.ela-icon {
+    filter: none; /* Keep original color */
+}
+
+body.subject-ela #program-title {
+    color: #2E7D32;
+}
+
+body.subject-ela .promo-card {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 1px solid #a5d6a7;
+}
+
+body.subject-ela .promo-card #promo-badge {
+    background-color: #4CAF50;
+}
+
+body.subject-ela .btn-yellow {
+    background-color: #FF9800; /* Tropical Orange */
+    box-shadow: 0 4px 0 #E65100;
+}
+
+body.subject-ela .btn-yellow:hover {
+    background-color: #FB8C00;
+}

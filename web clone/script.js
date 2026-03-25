@@ -68,13 +68,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Nav navigation active state
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            // e.preventDefault();
-            navItems.forEach(nav => nav.classList.remove('active'));
-            item.classList.add('active');
+    // Subject Switching Logic
+    const navMath = document.getElementById('nav-math');
+    const navEla = document.getElementById('nav-ela');
+    const programTitle = document.getElementById('program-title');
+    const promoTitle = document.getElementById('promo-title');
+    const promoDesc = document.getElementById('promo-desc');
+    const promoBtn = document.getElementById('promo-btn');
+    const promoImg = document.getElementById('promo-img');
+    const promoBadge = document.getElementById('promo-badge');
+
+    const content = {
+        math: {
+            title: 'Math program',
+            promoTitle: 'Your Galactic Mission: Complete Tutor Quests!',
+            promoDesc: 'Master new skills, earn 50 Star Coins, and unlock cool rewards for your avatar! Your tutor has left special challenges just for you.',
+            promoBtn: 'Start Mission',
+            promoImg: 'assets/promo-illustration.png',
+            promoBadge: '<i class="fas fa-rocket"></i> New Quest!'
+        },
+        ela: {
+            title: 'ELA program',
+            promoTitle: 'Unlock the Treasure! Complete Tutor Tasks',
+            promoDesc: 'Collect golden keys by finishing your English challenges. Each task brings you closer to the Rare Trophy chest!',
+            promoBtn: 'Claim My Tasks',
+            promoImg: 'assets/promo-ela.png',
+            promoBadge: '<i class="fas fa-key"></i> Treasure Hunt!'
+        }
+    };
+
+    function updateSubject(subject) {
+        document.body.className = subject === 'ela' ? 'subject-ela' : '';
+        
+        // Update Nav
+        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+        if (subject === 'math') navMath.classList.add('active');
+        if (subject === 'ela') navEla.classList.add('active');
+
+        // Update Content
+        programTitle.innerHTML = `${content[subject].title} <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>`;
+        promoTitle.textContent = content[subject].promoTitle;
+        promoDesc.textContent = content[subject].promoDesc;
+        promoBtn.textContent = content[subject].promoBtn;
+        promoImg.src = content[subject].promoImg;
+        promoBadge.innerHTML = content[subject].promoBadge;
+    }
+
+    if (navMath) {
+        navMath.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSubject('math');
         });
-    });
+    }
+
+    if (navEla) {
+        navEla.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSubject('ela');
+        });
+    }
 });
