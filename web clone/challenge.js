@@ -23,6 +23,7 @@ let currentQuestionIndex = 0;
 let answered = false;
 let subject = 'math';
 let score = 0;
+let asked = 0;
 
 // Get subject from URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -33,9 +34,7 @@ const questionText = document.getElementById('question-text');
 const optionsGrid = document.getElementById('options-grid');
 const feedback = document.getElementById('feedback');
 const nextBtn = document.getElementById('next-question-btn');
-const finishBtn = document.getElementById('finish-btn');
-const challengeContainer = document.getElementById('challenge-container');
-const resultCard = document.getElementById('result-card');
+const finalResultSection = document.getElementById('final-result-section');
 const scoreDisplay = document.getElementById('score-display');
 const resultMessage = document.getElementById('result-message');
 const resultIcon = document.getElementById('result-icon');
@@ -44,13 +43,13 @@ function renderQuestion() {
     const questions = questionBank[subject];
     const data = questions[currentQuestionIndex];
     
-    questionLabel.textContent = `Question ${currentQuestionIndex + 1} of 7`;
+    questionLabel.textContent = `Question ${currentQuestionIndex + 1} of 7 (${asked} asked / ${score} correct)`;
     questionText.textContent = data.q;
     optionsGrid.innerHTML = '';
     feedback.className = 'feedback-container';
     feedback.innerHTML = '';
     nextBtn.style.display = 'none';
-    finishBtn.style.display = 'none';
+    finalResultSection.style.display = 'none';
     answered = false;
 
     data.options.forEach(option => {
@@ -67,6 +66,7 @@ function handleAnswer(selectedOption, clickedBtn) {
     
     const data = questionBank[subject][currentQuestionIndex];
     answered = true;
+    asked++;
     
     // Disable all buttons
     const buttons = optionsGrid.querySelectorAll('.option-btn');
@@ -87,10 +87,13 @@ function handleAnswer(selectedOption, clickedBtn) {
         feedback.innerHTML = `<i class="fas fa-info-circle" style="margin-right: 8px;"></i> Don't worry, keep practicing! You're learning every step of the way.`;
     }
 
+    // Update progress in header immediately
+    questionLabel.textContent = `Question ${currentQuestionIndex + 1} of 7 (${asked} asked / ${score} correct)`;
+
     if (currentQuestionIndex < 6) {
         nextBtn.style.display = 'block';
     } else {
-        finishBtn.style.display = 'block';
+        showFinalResult();
     }
 }
 
@@ -99,25 +102,20 @@ nextBtn.addEventListener('click', () => {
     renderQuestion();
 });
 
-function showResult() {
-    challengeContainer.style.display = 'none';
-    resultCard.style.display = 'block';
+function showFinalResult() {
+    finalResultSection.style.display = 'block';
     scoreDisplay.textContent = `${score}/7 Correct`;
     
     if (score >= 5) {
         resultIcon.innerHTML = '<i class="fas fa-trophy" style="color: #facc15;"></i>';
         resultMessage.className = 'congrats-text';
-        resultMessage.textContent = "Amazing! You're a true champion! You mastered these challenges with ease.";
+        resultMessage.innerHTML = "<strong>Amazing! You're a true champion!</strong><br>You mastered these challenges with ease. Keep up the great work!";
     } else {
         resultIcon.innerHTML = '<i class="fas fa-rocket" style="color: var(--primary-blue);"></i>';
         resultMessage.className = 'encourage-text';
-        resultMessage.textContent = "Great effort! You're getting better every time. Let's try again to reach Level 5!";
+        resultMessage.innerHTML = "<strong>Great effort!</strong><br>You're getting better every time. Let's try again to reach Level 5!";
     }
 }
-
-finishBtn.addEventListener('click', () => {
-    showResult();
-});
 
 // Initial render
 renderQuestion();

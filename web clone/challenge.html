@@ -26,7 +26,7 @@
     <main class="content-wrapper">
         <div class="container">
             <div id="challenge-container" class="challenge-card">
-                <span id="question-count" class="question-label">Question 1 of 7</span>
+                <span id="question-count" class="question-label">Question 1 of 7 (0 asked / 0 correct)</span>
                 <h2 id="question-text" class="question-text">Loading question...</h2>
                 
                 <div id="options-grid" class="options-grid">
@@ -37,21 +37,19 @@
                     <!-- Feedback text will be injected here -->
                 </div>
 
+                <!-- Final Result Section (Hidden until last question) -->
+                <div id="final-result-section" style="display: none; border-top: 2px solid #f3f4f6; padding-top: 25px; margin-top: 20px; text-align: center;">
+                    <div id="result-icon" class="result-icon" style="font-size: 48px; margin-bottom: 15px;"></div>
+                    <h2 id="score-display" class="score-display" style="font-size: 32px; margin: 10px 0;">0/7 Correct</h2>
+                    <p id="result-message" style="margin-bottom: 25px; font-weight: 500;"></p>
+                    <div class="challenge-actions" style="justify-content: center; gap: 15px;">
+                        <button onclick="location.reload()" class="btn btn-outline">Try Again</button>
+                        <a href="mission.html" class="btn btn-yellow">Collect Rewards!</a>
+                    </div>
+                </div>
+
                 <div class="challenge-actions">
                     <button id="next-question-btn" class="btn btn-blue">Next <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
-                    <button id="finish-btn" class="btn btn-yellow" style="display: none;">See Results</button>
-                </div>
-            </div>
-
-            <!-- Result Card -->
-            <div id="result-card" class="challenge-card result-card">
-                <div id="result-icon" class="result-icon"></div>
-                <h2>Your Score</h2>
-                <div id="score-display" class="score-display">0/7</div>
-                <p id="result-message" class="congrats-text"></p>
-                <div class="challenge-actions" style="justify-content: center; gap: 15px;">
-                    <button onclick="location.reload()" class="btn btn-outline">Try Again</button>
-                    <a href="mission.html" class="btn btn-yellow">Back to Missions</a>
                 </div>
             </div>
         </div>
