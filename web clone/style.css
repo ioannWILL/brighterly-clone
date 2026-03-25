@@ -1244,3 +1244,67 @@ body.subject-ela .progress-fill {
 .logout-action:hover {
     background: #fef2f2;
 }
+
+/* Notification Settings Table */
+.settings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.settings-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #f1f5f9;
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.settings-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.settings-table tr:last-child td {
+    border-bottom: none;
+}
+
+.event-name {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.event-desc {
+    font-size: 12px;
+    color: var(--text-gray);
+    display: block;
+    margin-top: 2px;
+}
+
+.channel-check {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-blue);
+    cursor: pointer;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.channel-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.icon-email { color: #3b82f6; }
+.icon-sms { color: #10b981; }
+.icon-whatsapp { color: #25d366; }

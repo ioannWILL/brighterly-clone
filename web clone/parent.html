@@ -273,10 +273,81 @@
 
             <!-- Tab: Notifications -->
             <div id="notifications" class="parent-tab-content" style="display: none;">
-                <div class="mastery-card" style="text-align: center; padding: 100px 20px;">
-                    <i class="fas fa-bell" style="font-size: 48px; color: #cbd5e1; margin-bottom: 20px;"></i>
-                    <h3>No new notifications</h3>
-                    <p style="color: #64748b;">You're all caught up! We'll let you know when there's an update on Stefaniia's progress.</p>
+                <div class="mastery-card" style="padding: 30px;">
+                    <div class="settings-header">
+                        <div>
+                            <h3 style="margin: 0;">Notification Alerts</h3>
+                            <p style="color: #64748b; margin: 5px 0 0;">Control how and when you're notified about Stefaniia's learning journey.</p>
+                        </div>
+                        <button class="btn btn-yellow" onclick="alert('Settings saved successfully!')">Save Preferences</button>
+                    </div>
+
+                    <table class="settings-table">
+                        <thead>
+                            <tr>
+                                <th>Learning Events</th>
+                                <th style="text-align: center;"><span class="channel-icon icon-email"><i class="fas fa-envelope"></i> Email</span></th>
+                                <th style="text-align: center;"><span class="channel-icon icon-sms"><i class="fas fa-sms"></i> SMS</span></th>
+                                <th style="text-align: center;"><span class="channel-icon icon-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="event-name">Upcoming Lesson Reminders</span>
+                                    <span class="event-desc">24-hour and 1-hour alerts before tutor sessions.</span>
+                                </td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="event-name">Incomplete Tasks Alert</span>
+                                    <span class="event-desc">Reminders for tasks not finished 2 hours before lesson.</span>
+                                </td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="event-name">Lesson Summaries</span>
+                                    <span class="event-desc">Post-lesson feedback from the tutor and homework assigned.</span>
+                                </td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="event-name">Self-Learning Summaries</span>
+                                    <span class="event-desc">Weekly accuracy reports and XP progress review.</span>
+                                </td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="event-name">Daily Conversation Starters</span>
+                                    <span class="event-desc">Suggested topics to discuss what kid learned in lesson.</span>
+                                </td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="event-name">Major Achievements & Badges</span>
+                                    <span class="event-desc">Celebrate when Stefaniia reaches a new level or unlocks a rare badge.</span>
+                                </td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                                <td style="text-align: center;"><input type="checkbox" class="channel-check" checked></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
