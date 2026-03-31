@@ -878,4 +878,117 @@ Reference this for UI patterns and styling direction. The production app should 
 
 ---
 
+## Security
+
+### Prototype Security Measures (Implemented)
+
+The following security hardening has been applied for demo/prototype use:
+
+#### 1. Production Environment Guards
+
+All admin/dev endpoints are blocked in production (`NODE_ENV === "production"`):
+
+| Endpoint | Risk Mitigated |
+|----------|----------------|
+| `/api/reset` | Database wipe |
+| `/api/seed` | Data corruption |
+| `/api/seed-curriculum` | Curriculum overwrite |
+| `/api/seed-badges` | Badge manipulation |
+| `/api/debug` | Information disclosure |
+| `/api/test-login` | Unauthorized session creation |
+| `/api/simulation/advance-day` | Time manipulation |
+
+#### 2. XSS Prevention
+
+- `escapeHtml()` function added to sanitize DB content before HTML embedding
+- Applied to `summary_text` generation in `generateSessionSummary()`
+- Prevents injection via `question_text`, `success_statement`, `failure_statement` fields
+
+#### 3. Authorization Checks
+
+| Component | Protection |
+|-----------|------------|
+| `/api/skills-progress` | Ownership verification - returns 403 if `kidId` doesn't match session |
+| `startAttempt()` | Resumes existing uncompleted attempts to prevent orphan row creation |
+| Parent sub-pages | `ParentPinGate` wrapper on `/parent/sessions` and `/parent/skills` |
+
+#### 4. Schema Migration Graceful Degradation
+
+- `requestTutorHelp()` wrapped in try-catch for missing `tutor_help_requested` column
+- `generateSessionSummary()` falls back to query without optional column
+
+---
+
+### Known Prototype Limitations (By Design)
+
+The following are **intentional simplifications** for a rapid prototype. They must be addressed before production:
+
+#### 1. Open Row-Level Security (RLS)
+
+```sql
+-- Current prototype policy (in 20260325000000_initial_schema.sql)
+CREATE POLICY "Allow all for prototype" ON daily_tasks FOR ALL USING (true);
+```
+
+**Risk:** Any authenticated user can access any data.
+
+**Production fix:** Implement proper user-scoped RLS:
+```sql
+CREATE POLICY "Kids access own data"
+ON daily_tasks FOR ALL
+USING (kid_id = auth.uid());
+```
+
+#### 2. Client-Trusted Scoring
+
+The client sends `isCorrect` and `correctCount` to the server without server-side verification.
+
+**Risk:** Users can tamper requests to force correct answers.
+
+**Production fix:** Verify answers server-side:
+```typescript
+const question = await getQuestion(questionId);
+const isCorrect = selectedAnswer === question.correct_answer;
+```
+
+#### 3. Cookie-Based Session
+
+`kid_id` is stored in a plain cookie without cryptographic signing.
+
+**Risk:** Cookie can be modified to access other kids' data.
+
+**Production fix:** Use Supabase Auth with JWT tokens tied to authenticated users.
+
+#### 4. IDOR in Server Actions
+
+`submitAnswer()`, `completeAttempt()`, `requestTutorHelp()` accept IDs without ownership verification.
+
+**Risk:** Users can manipulate other kids' progress if they know/guess IDs.
+
+**Production fix:** Add ownership checks in all server actions:
+```typescript
+const kid = await getCurrentKid();
+const attempt = await getAttempt(attemptId);
+if (attempt.kid_id !== kid.id) throw new Error("Unauthorized");
+```
+
+---
+
+### Production Security Checklist
+
+Before deploying to production with real users:
+
+- [ ] Replace all RLS "allow all" policies with proper user-scoped policies
+- [ ] Implement Supabase Auth with email/password or OAuth
+- [ ] Add server-side answer verification
+- [ ] Add ownership checks to all server actions
+- [ ] Remove or permanently disable admin endpoints
+- [ ] Implement rate limiting on API routes
+- [ ] Add CSRF protection
+- [ ] Enable Supabase Auth email verification
+- [ ] Audit all `dangerouslySetInnerHTML` usage
+- [ ] Penetration testing before public launch
+
+---
+
 *Last updated: March 2026*
